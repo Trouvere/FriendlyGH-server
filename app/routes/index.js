@@ -7,6 +7,7 @@ const interest = require('./interest.route');
 const tag = require('./tag.route');
 const chats = require('./chats.route');
 const locations = require('./location.route.js');
+const test = require('./test.route.js');
 
 const apiRouter = () => {
   const router = express
@@ -25,7 +26,8 @@ const apiRouter = () => {
     .use('/interest', interest())
     .use('/tag', tag())
     .use('/chats', chats())
-    .use('/location', locations());
+    .use('/location', locations())
+    .use('/test', test());
 
   return router;
 };
