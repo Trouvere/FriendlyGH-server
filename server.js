@@ -1,15 +1,14 @@
 const express = require('express');
 const cors = require('cors');
 const apiRouter = require('./app/routes');
-const db = require('./app/models');
-const initial = require('./app/data');
+// const db = require('./app/models');
+// const initial = require('./app/data');
 
 const app = express();
 
 const corsOptions = {
   // origin: 'http://localhost:3000'
   origin: 'https://friendlygh.netlify.app'
-  // https://friendlygh.netlify.app/
 };
 
 app.use(cors(corsOptions));
@@ -27,7 +26,8 @@ app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
 
-db.sequelize.sync({ force: true }).then(() => {
-  console.log('Drop and Resync Db');
-  initial();
-});
+// Add initial MySQL in script
+// db.sequelize.sync({ force: true }).then(() => {
+//   console.log('Drop and Resync Db');
+//   initial();
+// });
